@@ -2,6 +2,11 @@
 
 A multi-model AI dashboard for monitoring driver behavior, analyzing customer/recipient feedback, and detecting forged driver ID documents. Built as part of a data science internship task on AI and analytics for smart driver monitoring.
 
+![image](./img/1.png)
+![image](./img/2.png)
+![image](./img/3.png)
+![image](./img/4.png)
+
 ---
 
 ## Overview
