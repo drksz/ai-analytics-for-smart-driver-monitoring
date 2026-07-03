@@ -1,6 +1,6 @@
 # XYZ Logistics — Smart Driver Monitoring Dashboard
 
-A multi-model AI dashboard for monitoring driver behavior, analyzing passenger feedback, and detecting forged driver ID documents. Built as part of a data science internship project on AI and analytics for smart driver monitoring.
+A multi-model AI dashboard for monitoring driver behavior, analyzing customer/recipient feedback, and detecting forged driver ID documents. Built as part of a data science internship task on AI and analytics for smart driver monitoring.
 
 ---
 
@@ -9,7 +9,7 @@ A multi-model AI dashboard for monitoring driver behavior, analyzing passenger f
 The dashboard consists of three modules:
 
 - **Telemetry & Violations** — Upload a trip telemetry CSV to predict driver ratings and detect hard braking, overspeeding, and swerving violations.
-- **Feedback Sentiment** — Enter passenger feedback text to classify sentiment as positive, neutral, or negative using a pretrained RoBERTa transformer.
+- **Feedback Sentiment** — Enter customer feedback text to classify sentiment as positive, neutral, or negative using a pretrained RoBERTa transformer.
 - **ID Forgery Detection** — Upload a driver ID image to check for signs of forgery using an ensemble of a fine-tuned EfficientNet-B0 CNN and an OCR-based field validation pipeline.
 
 ---
@@ -27,8 +27,8 @@ The dashboard consists of three modules:
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/your-repo-name.git
-cd your-repo-name
+git clone https://github.com/drksz/ai-analytics-for-smart-driver-monitoring.git
+cd ai-analytics-for-smart-driver-monitoring
 ```
 
 ### 2. Create and activate a virtual environment
@@ -99,7 +99,7 @@ Upload a CSV file containing trip telemetry data. The file must include the foll
 The app will display predicted ratings per trip and flag any hard braking, overspeeding, or swerving violations with a summary count.
 
 ### Tab 2 — Feedback Sentiment
-Type or paste a passenger feedback text into the text area and click **Analyze Sentiment**. The app will return a sentiment label (positive, neutral, or negative) along with a confidence score.
+Type or paste a customer feedback text sample into the text area and click **Analyze Sentiment**. The app will return a sentiment label (positive, neutral, or negative) along with a confidence score.
 
 ### Tab 3 — ID Forgery Detection
 Upload a driver ID image (PNG or JPG) and click **Run Forgery Check**. The app will display:
@@ -112,19 +112,23 @@ Upload a driver ID image (PNG or JPG) and click **Run Forgery Check**. The app w
 ---
 
 ## Project Structure
-project/
-data/
-genuine/          ← genuine ID images for training
-forged/           ← saved forged samples for testing
-preprocessed/     ← preprocessed telemetry CSV
-models/             ← saved model files
-notebooks/          ← Jupyter notebooks for each module
-src/
-forgery_check.py  ← forgery detection pipeline script
-demos/
-driver_demo/
-streamlit_app.py
-README.md
+
+```text
+ai-analytics-for-smart-driver-monitoring/
+├── data/
+│   └── img_test/    <--- contains images to test forgery detection in the streamlit app 
+│   │   ├── forged/   
+│   │   └── genuine/
+│   └── preprocessed/
+├── demos/
+│   └── driver_demo/
+│       └── streamlit_app.py
+├── eda-notebooks/
+├── models/
+├── src/
+│   ├── forgery_check.py
+└── README.md
+```
 
 ---
 
